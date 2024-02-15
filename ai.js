@@ -2,7 +2,7 @@ const generateForm = document.querySelector(".generate-form");
 const generateBtn = generateForm.querySelector(".generate-btn");
 const imageGallery = document.querySelector(".image-gallery");
 
-const OPENAI_API_KEY = "YOUR-OPENAI-API-KEY-HERE"; // Your OpenAI API key here
+const OPENAI_API_KEY = "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"; // OpenAI API key here
 let isImageGenerating = false;
 
 const updateImageCard = (imgDataArray) => {
@@ -11,11 +11,11 @@ const updateImageCard = (imgDataArray) => {
     const imgElement = imgCard.querySelector("img");
     const downloadBtn = imgCard.querySelector(".download-btn");
     
-    // Set the image source to the AI-generated image data
+    // Seting the image source to the AI-generated image data
     const aiGeneratedImage = `data:image/jpeg;base64,${imgObject.b64_json}`;
     imgElement.src = aiGeneratedImage;
     
-    // When the image is loaded, remove the loading class and set download attributes
+    // When the image is loaded, we will remove the loading class and set download attributes
     imgElement.onload = () => {
       imgCard.classList.remove("loading");
       downloadBtn.setAttribute("href", aiGeneratedImage);
